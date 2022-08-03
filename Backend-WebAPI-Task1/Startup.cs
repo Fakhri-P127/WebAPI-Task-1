@@ -1,4 +1,7 @@
 using Backend_WebAPI_Task1.DAL;
+using Backend_WebAPI_Task1.DTOs.Gameshop;
+using Backend_WebAPI_Task1.DTOs.VideoGame;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,7 +30,8 @@ namespace Backend_WebAPI_Task1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddFluentValidation(v => v.RegisterValidatorsFromAssemblyContaining<VideoGamePostDtoValidation>())
+                .AddFluentValidation(g => g.RegisterValidatorsFromAssemblyContaining<GameshopPostDtoValidation>());
             services.AddDbContext<APIDbContext>(opt =>
             {
                 opt.UseSqlServer(Configuration.GetConnectionString("default"));

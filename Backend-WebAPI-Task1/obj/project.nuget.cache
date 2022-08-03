@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "SF4P2XnqiBgt+2VHZxqE47HSTQtehSreRMcaXVWEc274s89xJeG7PpBS5sjLenUIegEiaCuTQrd6Ewt4R5Dk0w==",
+  "dgSpecHash": "6V4TiR5WQBFWbQzNn29N7e5WR3OGZaSBM81/uvk4kepoW1AdBXy5NPLCb7CZ5a+FCZbzt4cclQHG7glXw72y0A==",
   "success": true,
   "projectFilePath": "C:\\Users\\efend\\source\\repos\\Backend\\Backend-Homeworks\\Backend-WebAPI-Task1\\Backend-WebAPI-Task1\\Backend-WebAPI-Task1.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\efend\\.nuget\\packages\\fluentvalidation\\11.1.0\\fluentvalidation.11.1.0.nupkg.sha512",
+    "C:\\Users\\efend\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.1.2\\fluentvalidation.aspnetcore.11.1.2.nupkg.sha512",
+    "C:\\Users\\efend\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.1.0\\fluentvalidation.dependencyinjectionextensions.11.1.0.nupkg.sha512",
     "C:\\Users\\efend\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\efend\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
     "C:\\Users\\efend\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

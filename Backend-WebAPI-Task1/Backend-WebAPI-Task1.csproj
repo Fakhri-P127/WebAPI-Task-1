@@ -6,6 +6,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20220803155132_UpdatedBoolDefaultValue.cs" />
+    <Compile Remove="Migrations\20220803155132_UpdatedBoolDefaultValue.Designer.cs" />
+    <Compile Remove="Migrations\20220803165539_CreatedPackageBox.cs" />
+    <Compile Remove="Migrations\20220803165539_CreatedPackageBox.Designer.cs" />
+    <Compile Remove="Migrations\20220803165604_CreatedPackageBox.cs" />
+    <Compile Remove="Migrations\20220803165604_CreatedPackageBox.Designer.cs" />
+    <Compile Remove="Migrations\20220803170046_AddedPackageBoxTable.cs" />
+    <Compile Remove="Migrations\20220803170046_AddedPackageBoxTable.Designer.cs" />
+    <Compile Remove="Migrations\20220803170305_AddedPackageBoxTable.cs" />
+    <Compile Remove="Migrations\20220803170305_AddedPackageBoxTable.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.1.2" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.27" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.27" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.27">

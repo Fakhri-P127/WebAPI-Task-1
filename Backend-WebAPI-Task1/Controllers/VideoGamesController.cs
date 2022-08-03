@@ -1,4 +1,6 @@
 ﻿using Backend_WebAPI_Task1.DAL;
+using Backend_WebAPI_Task1.DTOs;
+using Backend_WebAPI_Task1.DTOs.VideoGame;
 using Backend_WebAPI_Task1.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -27,38 +29,66 @@ namespace Backend_WebAPI_Task1.Controllers
         {
             if (id == 0) return NotFound();
             VideoGame videoGame = _context.VideoGames.FirstOrDefault(v=>v.Id==id);
+
+            VideoGameGetDto videoGameDto = new VideoGameGetDto
+            {
+                Id=videoGame.Id,
+                Company=videoGame.Company,
+                Name=videoGame.Name,
+                Price=videoGame.Price,
+                IsVisible=videoGame.IsVisible
+            };
             if (videoGame is null) return StatusCode(StatusCodes.Status404NotFound);
-            return Ok(videoGame);
+            return Ok(videoGameDto);
         }
 
         [HttpGet]
         [Route("")]
-        public IActionResult GetAll()
+        public IActionResult GetAll(int page = 1,string search = null)
         {
-        
-            return Ok(_context.VideoGames.Where(v=>v.IsVisible==true).ToList());
-        }
 
+            var query = _context.VideoGames.Where(v=>v.IsVisible==true).AsQueryable();
+            if (!string.IsNullOrEmpty(search))
+            {
+                query = query.Where(q => q.Name.Contains(search));
+            }
+            VideoGameListDto dto = new VideoGameListDto
+            {
+                VideoGameListItemDtos = query
+                .Select(v => new VideoGameListItemDto { Id = v.Id, Company = v.Company, Name = v.Name, Price = v.Price })
+                .Skip((page - 1) * 4).Take(4).ToList(),
+                TotalCount=query.Count()
+
+            };
+            return Ok(dto);
+        }
+         
         [HttpPost]
         [Route("create")]
-         public IActionResult Create(VideoGame videoGame)
+        public async Task<IActionResult> Create(VideoGamePostDto videoGameDto)
         {
-            if (videoGame is null) return NotFound();
-            _context.VideoGames.Add(videoGame);
-            _context.SaveChanges();
-            return StatusCode(StatusCodes.Status201Created,videoGame);
+            if (videoGameDto is null) return NotFound();
+            VideoGame videoGame = new VideoGame
+            {
+                Company = videoGameDto.Company,
+                Name = videoGameDto.Name,
+                Price = videoGameDto.Price,
+                
+
+            };
+            await _context.VideoGames.AddAsync(videoGame);
+            await _context.SaveChangesAsync();
+            return StatusCode(StatusCodes.Status201Created, videoGame);
         }
 
         [HttpPut("update/{id}")]
        
-        public async Task<IActionResult> Update(int id,VideoGame videoGame)
+        public async Task<IActionResult> Update(int id,VideoGamePostDto videoGameDto)
         {
             if (id == 0) return BadRequest();
             VideoGame existed = _context.VideoGames.FirstOrDefault(v => v.Id == id);
             if (existed is null) return NotFound();
-            existed.Company = videoGame.Company;
-            existed.Name = videoGame.Name;
-            existed.Price = videoGame.Price;
+            _context.Entry(existed).CurrentValues.SetValues(videoGameDto);
 
             await _context.SaveChangesAsync();
             return StatusCode(StatusCodes.Status200OK,existed);

@@ -60,3 +60,7 @@ C:\Users\efend\source\repos\Backend\Backend-Homeworks\Backend-WebAPI-Task1\Backe
 C:\Users\efend\source\repos\Backend\Backend-Homeworks\Backend-WebAPI-Task1\Backend-WebAPI-Task1\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\efend\source\repos\Backend\Backend-Homeworks\Backend-WebAPI-Task1\Backend-WebAPI-Task1\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\efend\source\repos\Backend\Backend-Homeworks\Backend-WebAPI-Task1\Backend-WebAPI-Task1\obj\Debug\netcoreapp3.1\Backend-WebAPI-Task1.csproj.CopyComplete
+C:\Users\efend\source\repos\Backend\Backend-Homeworks\Backend-WebAPI-Task1\Backend-WebAPI-Task1\bin\Debug\netcoreapp3.1\FluentValidation.dll
+C:\Users\efend\source\repos\Backend\Backend-Homeworks\Backend-WebAPI-Task1\Backend-WebAPI-Task1\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
+C:\Users\efend\source\repos\Backend\Backend-Homeworks\Backend-WebAPI-Task1\Backend-WebAPI-Task1\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\efend\source\repos\Backend\Backend-Homeworks\Backend-WebAPI-Task1\Backend-WebAPI-Task1\obj\Debug\netcoreapp3.1\Backend-WebAPI-Task1.MvcApplicationPartsAssemblyInfo.cs

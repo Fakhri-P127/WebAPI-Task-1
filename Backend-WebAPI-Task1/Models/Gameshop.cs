@@ -1,0 +1,18 @@
+﻿using Backend_WebAPI_Task1.Models.Base;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Backend_WebAPI_Task1.Models
+{
+    public class Gameshop:BaseEntity
+    {
+        public string Title { get; set; }
+        public string Address { get; set; }
+        // qiymetleri false da $, null da $$, true da ise $$$ dir
+        public bool? PriceRange { get; set; }
+        //public List<VideoGame> VideoGames { get; set; }
+
+    }
+}
